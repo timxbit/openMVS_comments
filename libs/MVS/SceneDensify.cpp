@@ -1302,6 +1302,9 @@ bool DepthMapsData::FilterDepthMap(DepthData& depthDataRef, const IIndexArr& idx
 
 // fuse all depth-maps by simply projecting them in a 3D point cloud
 // in the world coordinate space
+/**
+ * @brief 融合所有深度图，输出结果为世界坐标系下的三维点云
+ */
 void DepthMapsData::MergeDepthMaps(PointCloud& pointcloud, bool bEstimateColor, bool bEstimateNormal)
 {
 	TD_TIMER_STARTD();
@@ -1751,6 +1754,14 @@ bool Scene::DenseReconstruction(int nFusionMode, bool bCrop2ROI, float fBorderRO
 
 // do first half of dense reconstruction: depth map computation
 // results are saved to "data"
+/**
+ * @brief 计算深度图
+ * 
+ * @param data 存储深度图计算所需要的数据和计算结果
+ * 
+ * @return true
+ * @return false
+ */
 bool Scene::ComputeDepthMaps(DenseDepthMapData& data)
 {
 	// compute point-cloud from the existing mesh

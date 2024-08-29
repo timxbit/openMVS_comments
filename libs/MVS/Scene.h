@@ -49,6 +49,8 @@ namespace MVS {
 // Forward declarations
 struct MVS_API DenseDepthMapData;
 
+#define GENERAL_API
+#define MVS_API GENERAL_API
 class MVS_API Scene
 {
 public:
